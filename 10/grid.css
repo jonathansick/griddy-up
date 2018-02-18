@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.poop {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  background: #BADA55;
+}
