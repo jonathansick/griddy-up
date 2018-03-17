@@ -34,6 +34,10 @@ p {
   grid-auto-flow: dense;
 }
 
+/*
+ * item is a grid container too so that we can position the image and open
+ * button within it.
+ */
 .item {
   overflow: hidden;
   display: grid;
@@ -41,6 +45,7 @@ p {
   grid-template-rows: 1;
 }
 
+/* the image is a grid item of `item` and spans the full grid. */
 .item img {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
@@ -49,6 +54,10 @@ p {
   object-fit: cover;
 }
 
+/*
+ * The overlay element contains the "view more" button. it overlaps the image,
+ * and appears above the image due to source order.
+ */
 .item__overlay {
   background: #ffc60032;
   grid-column: 1 / -1;
@@ -70,6 +79,7 @@ p {
   padding: 5px;
 }
 
+/* The button and overlay appear when the mouse hovers over the the image */
 .item:hover .item__overlay {
   transform: translateY(0);
 }
@@ -109,6 +119,7 @@ p {
   z-index: 2;
 }
 
+/* This overlay is the detailed image view */
 .overlay.open {
   display: grid;
   align-items: center;
